@@ -22,8 +22,8 @@ private ImageView fot;
         nom.setText(getIntent().getExtras().getString("nombre"));
         fot.setImageResource(getIntent().getExtras().getInt("foto"));
         det.setText(getIntent().getExtras().getString("descripcion"));
-        nom.setText(getIntent().getExtras().getString("actores"));
-        nom.setText(getIntent().getExtras().getString("director"));
+        act.setText(getIntent().getExtras().getString("actores"));
+        dir.setText(getIntent().getExtras().getString("director"));
         }
 
     private void inicializarVista(){
