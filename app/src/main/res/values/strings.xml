@@ -2,8 +2,8 @@
     <string name="app_name">Practico3Moviles</string>
     <string name="text_nombre">Nombre Pelicula</string>
     <string name="im_foto">Foto pelicula</string>
-    <string name="et_detalle">Detalle pelicula</string>
-    <string name="et_actor">Actores</string>
-    <string name="et_direc">Director</string>
+    <string name="tv_detalle">Detalle pelicula</string>
+    <string name="tv_actor">Actores</string>
+    <string name="tv_direc">Director</string>
     <string name="bt_detalle">Detalle</string>
 </resources>

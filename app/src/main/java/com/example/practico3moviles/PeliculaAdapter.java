@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter <PeliculaAdapter.ViewH
     private ArrayList<Peliculas> pelicula;
     private Context context;
     private LayoutInflater layoutInflater;
+
 
     public PeliculaAdapter(ArrayList<Peliculas> pelicula, Context context, LayoutInflater layoutInflater) {
         this.pelicula = pelicula;
@@ -44,11 +46,16 @@ public class PeliculaAdapter extends RecyclerView.Adapter <PeliculaAdapter.ViewH
         holder.detalle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(context, DetalleActivity.class);
+                i.putExtra("nombre", pelicula.get(position).getNombre());
+                i.putExtra("foto", pelicula.get(position).getFoto());
+                i.putExtra("descripcion", pelicula.get(position).getDescripcion());
+                i.putExtra("actores", pelicula.get(position).getActores());
+                i.putExtra("director", pelicula.get(position).getDirector());
 
+                context.startActivity(i);
             }
         });
-
-
 
     }
 
@@ -58,20 +65,25 @@ public class PeliculaAdapter extends RecyclerView.Adapter <PeliculaAdapter.ViewH
         return pelicula.size();
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView nombre;
+        private TextView nombre, act, dir, descrip;
         private ImageView foto;
-        private TextView descrip;
         private Button detalle;
+        private Context context;
 
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            nombre=itemView.findViewById(R.id.tvNombre);
-            foto=itemView.findViewById(R.id.ivFoto);
-            descrip=itemView.findViewById(R.id.etDetalle);
-            detalle=itemView.findViewById(R.id.btdetalle);
+            context = itemView.getContext();
+            nombre = itemView.findViewById(R.id.tvNombre);
+            foto = itemView.findViewById(R.id.ivFoto);
+            descrip = itemView.findViewById(R.id.tvDetalle);
+            act = itemView.findViewById(R.id.tvActores);
+            dir = itemView.findViewById(R.id.tvDirector);
+            detalle = itemView.findViewById(R.id.btdetalle);
+
 
         }
     }

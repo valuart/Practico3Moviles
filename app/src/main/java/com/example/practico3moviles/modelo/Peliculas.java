@@ -7,13 +7,14 @@ public class Peliculas {
      private String actores;
      private String director;
 
-     public Peliculas(String nombre, int foto, String descripcion, String actores, String director) {
+     public Peliculas( String nombre, int foto, String descripcion, String actores, String director) {
           this.nombre = nombre;
           this.foto = foto;
           this.descripcion = descripcion;
           this.actores = actores;
           this.director = director;
      }
+
 
      public String getNombre() {
           return nombre;
